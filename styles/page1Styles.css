@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; 
+  padding: 0 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-links img {
+  width: 350px; 
+  height: auto; 
+  transition: transform 0.3s ease; 
+  cursor: pointer;
+}
+
+.image-links img:hover {
+  transform: scale(1.05); 
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: rgb(238, 237, 237);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card {
+  text-align: center;
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #ccc;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+
+}
+
+.scroll-icon {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -30px;
+  margin: 0px auto 0; /* Top spacing, center horizontally */
+  width: 60px; /* Adjust size */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.scroll-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.scroll-icon:hover {
+  transform: scale(1.5);
+}
