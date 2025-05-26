@@ -110,4 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
         );
         observer.observe(poolSection);
     }
+
+    // Water consumption calculator
+    const userInput = document.getElementById('userInput');
+    const waterLevel = document.getElementById('waterLevel');
+    const waterAmount = document.getElementById('waterAmount');
+    const charCount = document.getElementById('charCount');
+
+    // Constants for calculation
+    const CHARS_PER_RESPONSE = 100; // Average characters per response
+    const ML_PER_RESPONSE = 500; // ml of water per response
+    const MAX_WATER_ML = 500; // Maximum water to show in visualization
+
+    function updateWaterConsumption() {
+        const text = userInput.value;
+        const chars = text.length;
+        const responses = chars / CHARS_PER_RESPONSE;
+        const waterUsed = Math.round(responses * ML_PER_RESPONSE);
+        
+        // Update stats
+        charCount.textContent = chars;
+        waterAmount.textContent = waterUsed;
+        
+        // Update visualization
+        const fillPercentage = Math.min((waterUsed / MAX_WATER_ML) * 100, 100);
+        waterLevel.style.height = `${fillPercentage}%`;
+    }
+
+    userInput.addEventListener('input', updateWaterConsumption);
 });

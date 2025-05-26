@@ -35,7 +35,7 @@
                     <span id="pool-counter" class="animated-counter">0</span>
                     to
                     <span id="pool-counter-max" class="animated-counter">0</span>
-                    Olympic swimming pools.
+                    <strong>Olympic swimming pools.</strong>
                 </p>
             </div>
             <div class="image-container" style="margin-top: 1.5rem;">
@@ -51,10 +51,26 @@
         <!-- GPT-3 Section -->
         <section class="section gpt-section">
             <div class="info-section">
-                <h2>GPT-3 needs to "drink" a 500ml bottle of water for roughly 10 to 50 medium-length responses.</h2>
-                <div class="image-row">
-                    <img src="assets/images/Number-requests-for-bottle-water.png" alt="Chart" class="info-image" />
-                    <img src="assets/images/spongebob-emptying-water.gif" alt="Bottle" class="info-image gif-right" />
+                <h2>Type below to check your GPT-3 water usage.</h2>
+                
+                <div class="interactive-demo">
+                    <div class="water-visualization">
+                        <div class="water-bottle">
+                            <div class="water-level" id="waterLevel"></div>
+                        </div>
+                        <div class="water-stats">
+                            <p>Water consumed: <span id="waterAmount">0</span>ml</p>
+                            <p>Characters typed: <span id="charCount">0</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="typing-area">
+                        <textarea 
+                            id="userInput" 
+                            placeholder="Type here to see how much water GPT-3 would consume..."
+                            rows="4"
+                        ></textarea>
+                    </div>
                 </div>
             </div>
         </section>
