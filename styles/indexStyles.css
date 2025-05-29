@@ -1,4 +1,4 @@
-/* Global scroll container */
+
 .scroll-container {
     height: 100vh;
     overflow-y: scroll;
@@ -9,7 +9,6 @@
     font-family: 'Fira Mono', 'Courier New', Courier, monospace;
 }
 
-/* Each section takes full viewport height */
 .section {
     height: 100vh;
     scroll-snap-align: start;
@@ -21,7 +20,6 @@
     background: #E3F2FD;
 }
 
-/* Landing section styles */
 .landing-section {
     background: #E3F2FD;
 }
@@ -39,7 +37,7 @@
 
 .main-image {
     max-width: 98vw;
-    width: 700px;
+    width: 800px;
     height: auto;
     margin-bottom: 1.5rem;
     display: block;
@@ -47,7 +45,6 @@
     margin-right: auto;
 }
 
-/* Water demand section styles */
 .water-demand {
     background: #E3F2FD;
     margin-top: -5rem;
@@ -126,18 +123,18 @@
     border: 2px solid #3f51b5;
     background: #fff;
     padding: 0.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .image-container img:hover, .info-image:hover {
-    transform: none;
-    filter: brightness(0.95);
+    transform: translateY(-5px);
+    filter: drop-shadow(0 5px 15px rgba(255, 230, 0, 0.3));
 }
 
 .gif-right {
     max-width: 200px;
 }
 
-/* Annotation styles */
 .annotation {
     font-size: 0.9rem;
     color: #3f51b5;
@@ -304,13 +301,70 @@ a:hover {
     font-family: 'Fira Mono', 'Courier New', Courier, monospace;
     font-size: 1rem;
     resize: vertical;
+    caret-color: #ffe600;
+    animation: border-pulse 1.5s infinite;
+}
+
+@keyframes border-pulse {
+    0% {
+        border-color: #ffe600;
+    }
+    50% {
+        border-color: #64b5f6;
+    }
+    100% {
+        border-color: #ffe600;
+    }
 }
 
 .typing-area textarea:focus {
     outline: none;
     border-color: #64b5f6;
+    animation: none;
 }
 
 .typing-area textarea::placeholder {
     color: rgba(255, 255, 255, 0.5);
+}
+
+/* Pool animation styles */
+.image-links img[alt="Olympic Pools Graphic"] {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.image-links img[alt="Olympic Pools Graphic"]:hover {
+    transform: scale(1.1) translateY(-10px);
+    filter: drop-shadow(0 0 15px rgba(255, 230, 0, 0.5));
+    animation-play-state: paused;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Stagger the pool animations */
+.image-links img[alt="Olympic Pools Graphic"]:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.image-links img[alt="Olympic Pools Graphic"]:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.image-links img[alt="Olympic Pools Graphic"]:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.image-links img[alt="Olympic Pools Graphic"]:nth-child(4) {
+    animation-delay: 1.5s;
 }
